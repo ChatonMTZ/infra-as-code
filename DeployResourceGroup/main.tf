@@ -14,7 +14,7 @@ terraform {
   }
 }
 
-resource "azurerm_resource_group" "MyAppRg" {
-  name     = "my-tests-rg"
-  location = "North Europe"
+resource "azurerm_resource_group" "AppRg" {
+  name     = "${var.environment}"
+  location = "${var.location}"
 }
