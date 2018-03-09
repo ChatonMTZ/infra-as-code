@@ -15,6 +15,6 @@ terraform {
 }
 
 resource "azurerm_resource_group" "AppRg" {
-  name     = "${var.environment}"
+  name     = "app-${var.environment}-rg"
   location = "${var.location}"
 }
