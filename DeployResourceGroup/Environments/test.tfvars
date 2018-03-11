@@ -8,6 +8,6 @@ appServiceSize = "S1"
 appServiceCapacity = "1"
 
 #Database
-databaseObjectiveName = "Standard"
+databaseEdition = "Standard"
 
-databaseObjectiveId = "S0"
+databaseObjectiveName = "S0"

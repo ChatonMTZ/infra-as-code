@@ -62,6 +62,6 @@ resource "azurerm_sql_database" "SqlDatabase" {
   resource_group_name              = "${azurerm_resource_group.DataRg.name}"
   location                         = "${var.location}"
   server_name                      = "${azurerm_sql_server.SqlServer.name}"
-  requested_service_objective_id   = "${var.databaseObjectiveId}"
   requested_service_objective_name = "${var.databaseObjectiveName}"
+  edition                          = "${var.databaseEdition}"
 }
