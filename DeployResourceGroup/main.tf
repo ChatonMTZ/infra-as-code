@@ -41,6 +41,4 @@ resource "azurerm_app_service" "AppService" {
   site_config {
     dotnet_framework_version = "v4.0"
   }
-
-  client_affinity_enabled = "false"
 }
