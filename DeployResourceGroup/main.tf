@@ -19,6 +19,11 @@ resource "azurerm_resource_group" "AppRg" {
   location = "${var.location}"
 }
 
+resource "azurerm_resource_group" "DataRg" {
+  name     = "app-${var.environment}-data-rg"
+  location = "${var.location}"
+}
+
 resource "azurerm_app_service_plan" "AppServicePlan" {
   name                = "app-${var.environment}-sp"
   resource_group_name = "${azurerm_resource_group.AppRg.name}"
@@ -41,4 +46,22 @@ resource "azurerm_app_service" "AppService" {
   site_config {
     dotnet_framework_version = "v4.0"
   }
+}
+
+resource "azurerm_sql_server" "SqlServer" {
+  name                         = "app-${var.environment}-sqlserver"
+  resource_group_name          = "${azurerm_resource_group.DataRg.name}"
+  location                     = "${var.location}"
+  version                      = "12.0"
+  administrator_login          = "appdbadmin"
+  administrator_login_password = "{{dbAdminAccount}}"
+}
+
+resource "azurerm_sql_database" "SqlDatabase" {
+  name                             = "app-${var.environment}-db"
+  resource_group_name              = "${azurerm_resource_group.DataRg.name}"
+  location                         = "${var.location}"
+  server_name                      = "${azurerm_sql_server.SqlServer.name}"
+  requested_service_objective_id   = "${var.databaseObjectiveId}"
+  requested_service_objective_name = "${var.databaseObjectiveName}"
 }

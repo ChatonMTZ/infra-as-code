@@ -9,3 +9,8 @@ variable "appServiceTier" {}
 
 variable "appServiceSize" {}
 variable "appServiceCapacity" {}
+
+#database Configuration
+variable "databaseObjectiveName" {}
+
+variable "databaseObjectiveId" {}
