@@ -13,4 +13,4 @@ variable "appServiceCapacity" {}
 #database Configuration
 variable "databaseObjectiveName" {}
 
-variable "databaseObjectiveId" {}
+variable "databaseEdition" {}
