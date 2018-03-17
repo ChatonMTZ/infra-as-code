@@ -1,0 +1,1 @@
+terraform init ".\infra-as-code\DeployInfrastructure"

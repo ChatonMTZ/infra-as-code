@@ -1,1 +1,0 @@
-terraform init .\infra-as-code\DeployResourceGroup
