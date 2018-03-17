@@ -1,1 +1,2 @@
-terraform init ".\infra-as-code\DeployInfrastructure"
+cd .\infra-as-code\DeployInfrastructure
+terraform init
