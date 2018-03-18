@@ -1,16 +1,16 @@
 provider "azurerm" {
-  subscription_id = "{{subscriptionId}}"
-  client_id       = "{{clientId}}"
-  client_secret   = "{{clientSecret}}"
-  tenant_id       = "{{tenantId}}"
+  subscription_id = "{{Provider.SubscriptionId}}"
+  client_id       = "{{Provider.ClientId}}"
+  client_secret   = "{{Provider.ClientSecret}}"
+  tenant_id       = "{{Provider.TenantId}}"
 }
 
 terraform {
   backend "azurerm" {
-    storage_account_name = "{{backendStorageAccountName}}"
-    container_name       = "{{backendContainerName}}"
-    key                  = "{{backendKey}}"
-    access_key           = "{{backendAccessKey}}"
+    storage_account_name = "{{Backend.StorageAccountName}}"
+    container_name       = "{{Backend.ContainerName}}"
+    key                  = "{{Backend.Key}}"
+    access_key           = "{{Backend.AccessKey}}"
   }
 }
 
@@ -54,7 +54,7 @@ resource "azurerm_sql_server" "SqlServer" {
   location                     = "${var.location}"
   version                      = "12.0"
   administrator_login          = "appdbadmin"
-  administrator_login_password = "{{dbAdminAccount}}"
+  administrator_login_password = "{{Database.AdminPassword}}"
 }
 
 resource "azurerm_sql_database" "SqlDatabase" {
