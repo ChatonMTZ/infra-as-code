@@ -5,13 +5,11 @@ variable "location" {
 variable "environment" {}
 
 #App service configuration
-variable "appServiceTier" {}
-
-variable "appServiceSize" {}
-variable "appServiceCapacity" {}
+variable "app_service_tiers" {}
+variable "app_service_size" {}
+variable "app_service_capacity" {}
 
 #database Configuration
-variable "databaseObjectiveName" {}
-
-variable "databaseEdition" {}
-variable "databaseAdminPassword" {}
+variable "database_objective_name" {}
+variable "database_edition" {}
+variable "database_admin_password" {}

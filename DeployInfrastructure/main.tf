@@ -21,9 +21,9 @@ resource "azurerm_app_service_plan" "AppServicePlan" {
   kind                = "Windows"
 
   sku {
-    tier     = "${var.appServiceTier}"
-    size     = "${var.appServiceSize}"
-    capacity = "${var.appServiceCapacity}"
+    tier     = "${var.app_service_tiers}"
+    size     = "${var.app_service_size}"
+    capacity = "${var.app_service_capacity}"
   }
 }
 
@@ -44,7 +44,7 @@ resource "azurerm_sql_server" "SqlServer" {
   location                     = "${var.location}"
   version                      = "12.0"
   administrator_login          = "appdbadmin"
-  administrator_login_password = "${var.databaseAdminPassword}"
+  administrator_login_password = "${var.database_admin_password}"
 }
 
 resource "azurerm_sql_database" "SqlDatabase" {
@@ -52,6 +52,6 @@ resource "azurerm_sql_database" "SqlDatabase" {
   resource_group_name              = "${azurerm_resource_group.DataRg.name}"
   location                         = "${var.location}"
   server_name                      = "${azurerm_sql_server.SqlServer.name}"
-  requested_service_objective_name = "${var.databaseObjectiveName}"
-  edition                          = "${var.databaseEdition}"
+  requested_service_objective_name = "${var.database_objective_name}"
+  edition                          = "${var.database_edition}"
 }

@@ -1,1 +1,1 @@
-databaseAdminPassword = "{{Database.AdminPassword}}"
+database_admin_password = "{{Database.AdminPassword}}"
