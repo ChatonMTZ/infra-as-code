@@ -14,3 +14,4 @@ variable "appServiceCapacity" {}
 variable "databaseObjectiveName" {}
 
 variable "databaseEdition" {}
+variable "databaseAdminPassword" {}
