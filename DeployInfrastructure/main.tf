@@ -1,11 +1,7 @@
-provider "azurerm" {
-  # subscription_id = "{{Provider.SubscriptionId}}"  # client_id       = "{{Provider.ClientId}}"  # client_secret   = "{{Provider.ClientSecret}}"  # tenant_id       = "{{Provider.TenantId}}"
-}
+provider "azurerm" {}
 
 terraform {
-  backend "azurerm" {
-    # storage_account_name = "{{Backend.StorageAccountName}}"  # container_name       = "{{Backend.ContainerName}}"  # key                  = "{{Backend.Key}}"  # access_key           = "{{Backend.AccessKey}}"
-  }
+  backend "azurerm" {}
 }
 
 resource "azurerm_resource_group" "AppRg" {
@@ -25,9 +21,9 @@ resource "azurerm_app_service_plan" "AppServicePlan" {
   kind                = "Windows"
 
   sku {
-    tier     = "${var.appServiceTier}"
-    size     = "${var.appServiceSize}"
-    capacity = "${var.appServiceCapacity}"
+    tier     = "${var.appService_tier}"
+    size     = "${var.appService_size}"
+    capacity = "${var.appService_capacity}"
   }
 }
 
@@ -48,7 +44,7 @@ resource "azurerm_sql_server" "SqlServer" {
   location                     = "${var.location}"
   version                      = "12.0"
   administrator_login          = "appdbadmin"
-  administrator_login_password = "{{Database.AdminPassword}}"
+  administrator_login_password = "${var.database_adminpassword}"
 }
 
 resource "azurerm_sql_database" "SqlDatabase" {
@@ -56,6 +52,6 @@ resource "azurerm_sql_database" "SqlDatabase" {
   resource_group_name              = "${azurerm_resource_group.DataRg.name}"
   location                         = "${var.location}"
   server_name                      = "${azurerm_sql_server.SqlServer.name}"
-  requested_service_objective_name = "${var.databaseObjectiveName}"
-  edition                          = "${var.databaseEdition}"
+  requested_service_objective_name = "${var.database_objectiveName}"
+  edition                          = "${var.database_edition}"
 }

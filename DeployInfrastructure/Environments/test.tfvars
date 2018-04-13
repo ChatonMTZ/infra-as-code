@@ -1,13 +1,13 @@
 environment = "test"
 
 #App service configuration
-appServiceTier = "Standard"
+appService_tier = "Standard"
 
-appServiceSize = "S1"
+appService_size = "S1"
 
-appServiceCapacity = "1"
+appService_capacity = "1"
 
 #Database
-databaseEdition = "Standard"
+database_edition = "Standard"
 
-databaseObjectiveName = "S0"
+database_objectiveName = "S0"
