@@ -1,16 +1,10 @@
 provider "azurerm" {
-  subscription_id = "{{Provider.SubscriptionId}}"
-  client_id       = "{{Provider.ClientId}}"
-  client_secret   = "{{Provider.ClientSecret}}"
-  tenant_id       = "{{Provider.TenantId}}"
+  # subscription_id = "{{Provider.SubscriptionId}}"  # client_id       = "{{Provider.ClientId}}"  # client_secret   = "{{Provider.ClientSecret}}"  # tenant_id       = "{{Provider.TenantId}}"
 }
 
 terraform {
   backend "azurerm" {
-    storage_account_name = "{{Backend.StorageAccountName}}"
-    container_name       = "{{Backend.ContainerName}}"
-    key                  = "{{Backend.Key}}"
-    access_key           = "{{Backend.AccessKey}}"
+    # storage_account_name = "{{Backend.StorageAccountName}}"  # container_name       = "{{Backend.ContainerName}}"  # key                  = "{{Backend.Key}}"  # access_key           = "{{Backend.AccessKey}}"
   }
 }
 
