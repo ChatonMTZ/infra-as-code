@@ -7,7 +7,7 @@ Import-Module Azure -Force
 Import-Module Pester -Force
 
 if ($testFilesPath) {
-    Invoke-Pester $testFilesPath
+    Invoke-Pester -OutputFile $testFilesPath\testresult.xml -OutputFormat NUnitXml $testFilesPath
 }
 else {
     Invoke-Pester
