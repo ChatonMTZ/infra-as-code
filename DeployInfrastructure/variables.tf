@@ -1,3 +1,9 @@
+#provider
+variable "provider_subscription_id" {}
+variable "provider_client_id" {}
+variable "provider_client_secret" {}
+variable "provider_tenant_id" {}
+
 variable "location" {
   default = "North Europe"
 }

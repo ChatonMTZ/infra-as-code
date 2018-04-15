@@ -1,0 +1,5 @@
+storage_account_name =  "tfbackenddemo"
+container_name       =  "tests-tfstate"
+key                  =  "tests.tfstats"
+resource_group_name  =  "infra-as-code-rg"
+access_key           =  "{{backend_access_key}}"
