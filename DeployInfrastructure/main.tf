@@ -11,17 +11,17 @@ terraform {
 }
 
 resource "azurerm_resource_group" "AppRg" {
-  name     = "app-${var.environment}-rg"
+  name     = "${var.projet_name}-${var.environment}-rg"
   location = "${var.location}"
 }
 
 resource "azurerm_resource_group" "DataRg" {
-  name     = "app-${var.environment}-data-rg"
+  name     = "${var.projet_name}-${var.environment}-data-rg"
   location = "${var.location}"
 }
 
 resource "azurerm_app_service_plan" "AppServicePlan" {
-  name                = "app-${var.environment}-sp"
+  name                = "${var.projet_name}-${var.environment}-sp"
   resource_group_name = "${azurerm_resource_group.AppRg.name}"
   location            = "${var.location}"
   kind                = "Windows"
@@ -34,7 +34,7 @@ resource "azurerm_app_service_plan" "AppServicePlan" {
 }
 
 resource "azurerm_app_service" "AppService" {
-  name                = "app-${var.environment}-as"
+  name                = "${var.projet_name}-${var.environment}-as"
   location            = "${var.location}"
   resource_group_name = "${azurerm_resource_group.AppRg.name}"
   app_service_plan_id = "${azurerm_app_service_plan.AppServicePlan.id}"
@@ -45,7 +45,7 @@ resource "azurerm_app_service" "AppService" {
 }
 
 resource "azurerm_sql_server" "SqlServer" {
-  name                         = "app-${var.environment}-sqlserver"
+  name                         = "${var.projet_name}-${var.environment}-sqlserver"
   resource_group_name          = "${azurerm_resource_group.DataRg.name}"
   location                     = "${var.location}"
   version                      = "12.0"
@@ -54,7 +54,7 @@ resource "azurerm_sql_server" "SqlServer" {
 }
 
 resource "azurerm_sql_database" "SqlDatabase" {
-  name                             = "app-${var.environment}-db"
+  name                             = "${var.projet_name}-${var.environment}-db"
   resource_group_name              = "${azurerm_resource_group.DataRg.name}"
   location                         = "${var.location}"
   server_name                      = "${azurerm_sql_server.SqlServer.name}"

@@ -9,6 +9,7 @@ variable "location" {
 }
 
 variable "environment" {}
+variable "projet_name" {}
 
 #App service configuration
 variable "app_service_tiers" {}

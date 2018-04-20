@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="12" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2018-04-15" time="18:11:59">
+  <environment user="sylva" machine-name="DESKTOP-FGCKCR6" cwd="E:\Repos\infra-as-code\Tests" user-domain="DESKTOP-FGCKCR6" platform="Microsoft Windows 10 Pro N|C:\WINDOWS|\Device\Harddisk1\Partition4" nunit-version="2.5.8.0" os-version="10.0.16299" clr-version="4.0.30319.42000" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="TestFixture" name="Pester" executed="True" result="Success" success="True" time="7.4228" asserts="0" description="Pester">
+    <results>
+      <test-suite type="TestFixture" name="E:\Repos\infra-as-code\Tests\Infrastructure-tests\Infrastructure.Tests.ps1" executed="True" result="Success" success="True" time="7.4228" asserts="0" description="E:\Repos\infra-as-code\Tests\Infrastructure-tests\Infrastructure.Tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="As a infrastructure member, I want the application infrastructure to be deployed" executed="True" result="Success" success="True" time="7.4228" asserts="0" description="As a infrastructure member, I want the application infrastructure to be deployed">
+            <results>
+              <test-suite type="TestFixture" name="The application database is deployed" executed="True" result="Success" success="True" time="2.8606" asserts="0" description="The application database is deployed">
+                <results>
+                  <test-case description="The data resource group should be created" name="As a infrastructure member, I want the application infrastructure to be deployed.The application database is deployed.The data resource group should be created" time="0.9709" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="The SQL server is created" name="As a infrastructure member, I want the application infrastructure to be deployed.The application database is deployed.The SQL server is created" time="0.8026" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="The database is created" name="As a infrastructure member, I want the application infrastructure to be deployed.The application database is deployed.The database is created" time="1.0374" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="The database location is North Europe" name="As a infrastructure member, I want the application infrastructure to be deployed.The application database is deployed.The database location is North Europe" time="0.0215" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="The database edition is Standard" name="As a infrastructure member, I want the application infrastructure to be deployed.The application database is deployed.The database edition is Standard" time="0.0124" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="The database serivce objective name is S0" name="As a infrastructure member, I want the application infrastructure to be deployed.The application database is deployed.The database serivce objective name is S0" time="0.0157" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+              <test-suite type="TestFixture" name="The application front server is deployed" executed="True" result="Success" success="True" time="4.5622" asserts="0" description="The application front server is deployed">
+                <results>
+                  <test-case description="The front resource group should be created" name="As a infrastructure member, I want the application infrastructure to be deployed.The application front server is deployed.The front resource group should be created" time="0.5388" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="The app service plan is created" name="As a infrastructure member, I want the application infrastructure to be deployed.The application front server is deployed.The app service plan is created" time="0.9061" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="the app service plan sku tiers is Standard" name="As a infrastructure member, I want the application infrastructure to be deployed.The application front server is deployed.the app service plan sku tiers is Standard" time="0.0379" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="the app service plan sku Size is S1" name="As a infrastructure member, I want the application infrastructure to be deployed.The application front server is deployed.the app service plan sku Size is S1" time="0.1269" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="The app service is created" name="As a infrastructure member, I want the application infrastructure to be deployed.The application front server is deployed.The app service is created" time="2.9202" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="The app service location is North Europe" name="As a infrastructure member, I want the application infrastructure to be deployed.The application front server is deployed.The app service location is North Europe" time="0.0323" asserts="0" success="True" result="Success" executed="True" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
