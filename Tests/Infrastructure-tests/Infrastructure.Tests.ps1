@@ -3,9 +3,9 @@ Describe "As a infrastructure member, I want the application infrastructure to b
 
     Context "The application database is deployed" {
 
-        $dataResourceGroupName = "app-test-data-rg"
-        $databaseSQLServerName = "app-test-sqlserver"
-        $databaseName = "app-test-db"
+        $dataResourceGroupName = "demogab-test-data-rg"
+        $databaseSQLServerName = "demogab-test-sqlserver"
+        $databaseName = "demogab-test-db"
 
         It "The data resource group should be created" {
             $dataResourceGroup = Get-AzureRmResourceGroup -Name $dataResourceGroupName -ErrorAction SilentlyContinue
@@ -38,9 +38,9 @@ Describe "As a infrastructure member, I want the application infrastructure to b
 
     Context "The application front server is deployed" {
 
-        $frontResourceGroupName = "app-test-rg"
-        $frontAppServicePlan = "app-test-sp"
-        $frontAppServiceName = "app-test-as"
+        $frontResourceGroupName = "demogab-test-rg"
+        $frontAppServicePlan = "demogab-test-sp"
+        $frontAppServiceName = "demogab-test-as"
 
         It "The front resource group should be created" {
             $frontResourceGroup = Get-AzureRmResourceGroup -Name $frontResourceGroupName -ErrorAction SilentlyContinue
