@@ -10,4 +10,4 @@ app_service_capacity = "1"
 database_edition = "Standard"
 database_objective_name = "S0"
 
-
+projet_name = "demogab"
